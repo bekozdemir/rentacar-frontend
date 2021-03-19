@@ -10,6 +10,8 @@ import { BrandComponent } from './components/brand/brand.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { RentalsComponent } from './components/rentals/rentals.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { RentalsComponent } from './components/rentals/rentals.component';
     BrandComponent,
     CustomerComponent,
     NaviComponent,
-    RentalsComponent
+    RentalsComponent,
+    CarDetailComponent,
+    
   ],
   imports: [
     BrowserModule,
