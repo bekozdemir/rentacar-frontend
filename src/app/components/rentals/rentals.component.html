@@ -2,10 +2,12 @@
     <span class="visually-hidden">Loading...</span>
   </div>
 
-<table *ngIf="dataLoaded!=false" class="table">
+<table type="text" *ngIf="dataLoaded!=false" class="table table-bordered">
     <thead>
         <tr>
+            <th>Id</th>
             <th>Car Name</th>
+            <th>Car Id</th>
             <th>Brand Name</th>
             <th>Color Name</th>
             <th>Customer Name</th>
@@ -14,14 +16,18 @@
             <th>Return Date</th>
         </tr>
     </thead>
-    <tr *ngFor="let rental of rentals">
-        <td>{{rental.carName}}</td>
-        <td>{{rental.brandName}}</td>
-        <td>{{rental.colorName}}</td>
-        <td>{{rental.customerName}}</td>
-        <td>{{rental.companyName}}</td>
-        <td>{{rental.rentDate}}</td>
-        <td>{{rental.returnDate}}</td>
-    </tr>    
+    <tbody>
+        <tr *ngFor="let rental of rentals" style="text-align: center;">
+            <td>{{rental.id}}</td>
+            <td>{{rental.carName}}</td>
+            <td>{{rental.carId}}</td>
+            <td>{{rental.brandName}}</td>
+            <td>{{rental.colorName}}</td>
+            <td>{{rental.customerName}}</td>
+            <td>{{rental.companyName}}</td>
+            <td>{{rental.rentDate|date:'d/M/yy'}}</td>
+            <td>{{rental.returnDate|date:'d/M/yy'}}</td>
+        </tr>  
+    </tbody>  
 </table>
 

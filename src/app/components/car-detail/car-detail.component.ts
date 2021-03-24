@@ -7,6 +7,7 @@ import { CarImagesService } from 'src/app/services/car-images.service';
 
 
 
+
 @Component({
   selector: 'app-car-detail',
   templateUrl: './car-detail.component.html',
@@ -19,10 +20,10 @@ export class CarDetailComponent implements OnInit {
   dataLoaded=false
   url:string = "https://localhost:44326/images/"
 
+
   constructor(private carDetailService:CarDetailService, private activatedRoute:ActivatedRoute, private carImagesService:CarImagesService) { }
 
   ngOnInit(): void {
-    console.log("aaa")
     this.activatedRoute.params.subscribe(params => {
       if (params["carId"]) {
         this.getCarDetail(params["carId"])
@@ -33,7 +34,7 @@ export class CarDetailComponent implements OnInit {
 
   getCarDetail(carId:number){
     this.carDetailService.getCarDetail(carId).subscribe(response =>{
-      console.log(carId)
+
       this.carDetails=response.data[0];
       this.dataLoaded=true
       console.log(response)
@@ -45,11 +46,12 @@ export class CarDetailComponent implements OnInit {
       this.carImages=response.data;
     })
   }
+
   getSliderClassName(index:Number){
     if(index == 0){
       return "carousel-item active";
     } else {
       return "carousel-item";
     }
-  }
+  }  
 }

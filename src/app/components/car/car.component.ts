@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Car } from 'src/app/models/car';
 import { CarService } from 'src/app/services/car.service';
 
@@ -10,16 +11,19 @@ import { CarService } from 'src/app/services/car.service';
 })
 export class CarComponent implements OnInit {
 
+  carFilterText:string;
   cars:Car[] = [];
   dataLoaded=false;
 
-  constructor(private carService:CarService, private activatedRoute:ActivatedRoute) { }
+  constructor(private carService:CarService, private activatedRoute:ActivatedRoute, private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params=>{
-      if(params["brandId"]){
+      if (params["brandId"] && params["colorId"]){
+        this.getCarsByBrandAndColorId(params["brandId"], params["colorId"])
+      }else if(params["brandId"]){
         this.getCarsByBrand(params["brandId"])
-      }else if (params["colorId"]) {
+    }else if (params["colorId"]) {
         this.getCarsByColor(params["colorId"])
       }else{
         this.getCars();
@@ -42,10 +46,19 @@ export class CarComponent implements OnInit {
   }
 
   getCarsByColor(colorId:number){
-    this.carService.getCarsByBrand(colorId).subscribe(response => {
+    this.carService.getCarsByColor(colorId).subscribe(response => {
       this.cars = response.data
       this.dataLoaded=true
     })
   }
-}
 
+  getCarsByBrandAndColorId(brandId:number, colorId:number){
+    this.carService.getCarsByBrandAndColorId(brandId,colorId).subscribe(response => {
+      this.cars = response.data
+      this.dataLoaded = true
+      if (this.cars.length==0) {
+        this.toastrService.info("Aradığınız kriterlere uygun bir araç bulunamadı.", "Filtreleme sonucu")
+      }
+    })
+  }
+}

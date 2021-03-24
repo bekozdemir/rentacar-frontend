@@ -1,5 +1,10 @@
 <div class="col-lg-7 mx-auto">
-    
+  <div class="card-body d-grid gap-2 mx-auto">
+    <app-rent [car]="carDetails"> </app-rent>
+  </div>
+  <!-- <div class="d-grid gap-2 mb-2" *ngIf="carDetails.status == false">
+    <div class="alert alert-danger">Araç şuan kiralanamaz</div>
+  </div> -->
   <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div *ngFor="let image of carImages; index as i; first as firstImage"  class="carousel-item active" [ngClass]="{ active: firstImage }" style="height: 100%; width: 100%">
@@ -11,22 +16,22 @@
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
+
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleSlidesOnly"  data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
     
-    <div style="text-align:center"  aria-current="true" *ngIf="carDetails">
-      <h4>
-        {{carDetails.brandName}}-{{carDetails.carName}} 
-      </h4>
-    </div>
+  <div style="text-align:center"  aria-current="true" *ngIf="carDetails">
+    <h4>
+      {{carDetails.brandName}}-{{carDetails.carName}} 
+    </h4>
+  </div>
 
   <table class="table">
-   
     <thead>
-      <tr>
+      <tr style="text-align: center;">
         <th>Id</th>
         <th>Marka</th>
         <th>Renk</th>
@@ -35,15 +40,18 @@
         <th>Açıklama</th> 
       </tr>
     </thead>
-      <tr *ngIf="carDetails"  >
+    <tbody>
+      <tr *ngIf="carDetails" style="text-align: center;" >
         <td>{{carDetails.id}} </td>
         <td>{{carDetails.brandName}}</td>
         <td>{{carDetails.colorName}}</td>
         <td>{{carDetails.modelYear}}</td>
-        <td>{{carDetails.dailyPrice}}</td>
+        <td>{{carDetails.dailyPrice |currency:"₺"}}</td>
         <td>{{carDetails.description}}</td>
-    </tr>
+      </tr>
+    </tbody>
   </table>
+  
 </div>
 
       

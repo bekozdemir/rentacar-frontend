@@ -9,7 +9,8 @@ import { RentalService } from 'src/app/services/rental.service';
 })
 export class RentalsComponent implements OnInit {
 
-  rentals:Rental[] = []
+  rentals:Rental[];
+  
   dataLoaded=false
   constructor( private rentalService:RentalService ) { }
 

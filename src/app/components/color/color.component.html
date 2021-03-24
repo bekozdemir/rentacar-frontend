@@ -1,11 +1,20 @@
-<br><h6>Colors</h6>
+<h6>Colors</h6>
 
-<ul class="list-group">
-    <li (click)="clearCurrentColor()" [class]="getAllColorClass()" routerLink="/cars" >Tüm Renkler</li>
+<!-- <ul class="list-group">
+    <li (click)="clearCurrentColor()" [class]="getAllColorClass()" routerLink="/cars" >Tüm Renkler</li>        Listeli sistem.
     <li (click)="setCurrentColor(color)" 
     routerLink="cars/color/{{color.colorId}}" 
     *ngFor="let color of colors" 
     [class]="getCurrentColor(color)"> {{color.colorName}} </li>
     
 </ul>
-<h6 *ngIf="currentColor" >{{currentColor.colorName}} seçildi.</h6> 
+<h6 *ngIf="currentColor" >{{currentColor.colorName}} seçildi.</h6>  -->
+
+<div class="mb-3">
+    <input type="text" [(ngModel)]="colorFilterText" class="form-control" id="colorFilterText" 
+    placeholder="Renk giriniz">
+  </div>
+  <select class="form-select" [(ngModel)]="currentColor" (change)="setQueryParams(currentColor)" aria-label="Default select example">
+    <option [selected]="isAllColorSelected()" [ngValue]=undefined>Tüm Renkler</option>
+    <option [selected]="isCurrentColor(color)" *ngFor="let color of colors | colorFilter:colorFilterText; index as i" [ngValue]="color">{{color.colorName}}</option>
+  </select>
