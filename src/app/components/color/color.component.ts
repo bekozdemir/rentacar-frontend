@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
 
@@ -15,7 +16,7 @@ export class ColorComponent implements OnInit {
   colors:Color[] = []
   currentColor:Color
   dataLoaded = false
-  constructor(private colorService:ColorService, private route:ActivatedRoute, private router:Router) { }
+  constructor(private colorService:ColorService, private route:ActivatedRoute, private router:Router, private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getColors();
@@ -30,6 +31,7 @@ export class ColorComponent implements OnInit {
 
   setCurrentColor(){
     this.router.navigate(['cars/','color', this.currentColor.colorId])
+    this.toastrService.info("Seçilen renge ait araçlar listelendi", this.currentColor.colorName)
   }  
 
   setQueryParams(color:Color){
@@ -59,5 +61,6 @@ export class ColorComponent implements OnInit {
   clearCurrentColor(){
     this.currentColor= undefined;
     this.router.navigate(['/cars'], {queryParams: {colorId: undefined}, queryParamsHandling: 'merge', relativeTo: this.route})
+    this.toastrService.info("Bütün araçlar listelendi", "Tüm renkler")
   }
 }

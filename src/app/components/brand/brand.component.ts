@@ -3,6 +3,7 @@ import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 import { Location } from '@angular/common'
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-brand',
@@ -16,7 +17,7 @@ export class BrandComponent implements OnInit {
   brandFilterText:string;
   dataLoaded = false;
 
-  constructor(private brandService:BrandService, private router:Router, private route:ActivatedRoute) { }
+  constructor(private brandService:BrandService, private router:Router, private route:ActivatedRoute, private toastrService:ToastrService) { }
 
   ngOnInit(): void {
     this.getBrands();
@@ -39,6 +40,7 @@ export class BrandComponent implements OnInit {
   
   setCurrentBrand() {
     this.router.navigate(['cars/','brand', this.currentBrand.brandId]);
+    this.toastrService.info("Seçilen marka listelendi", this.currentBrand.brandName)
   }
 
   isCurrentBrand(brand: Brand) {
@@ -60,5 +62,6 @@ export class BrandComponent implements OnInit {
   clearCurrentBrand(){
     this.currentBrand = undefined;
     this.router.navigate(['cars/']);
+    this.toastrService.info("Bütün araçlar listelendi", "Tüm markalar")
   }
 }

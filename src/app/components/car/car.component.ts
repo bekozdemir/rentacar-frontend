@@ -58,7 +58,8 @@ export class CarComponent implements OnInit {
       this.dataLoaded = true
       if (this.cars.length==0) {
         this.toastrService.info("Aradığınız kriterlere uygun bir araç bulunamadı.", "Filtreleme sonucu")
-      }
+      }else{ this.toastrService.info("Filtrelenen araçlar listelendi", "Filtreleme sonucu")}
+     
     })
   }
 }
