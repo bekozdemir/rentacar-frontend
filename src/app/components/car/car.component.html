@@ -27,6 +27,7 @@
           <td>{{car.dailyPrice |currency:"₺"}}</td>
           <td>{{car.description}}</td>
           <td style="text-align: center;"><a class="btn btn-primary btn-sm" routerLink="/cars/car-detail/{{ car.id }}">Detaylar</a></td>
+          <td style="text-align: center;"><button class="btn btn-fill btn-primary btn-sm" routerLink="cars/car-add/{{ car.id }}">Update</button></td> 
           
       </tr>  
     </tbody>   

@@ -19,7 +19,7 @@
 
 <select class="form-select" [(ngModel)]="currentBrand" #brandSelection (change)="setQueryParams(currentBrand)" aria-label="Default select example">
   <option [selected]="isAllBrandSelected()" [ngValue]=undefined>Tüm markalar</option>
-  <option [selected]="isCurrentBrand(brand)"  *ngFor="let brand of brands | brandFilter:brandFilterText; index as i" [ngValue]="brand">{{brand.brandName}}</option>
+  <option [selected]="isCurrentBrand(brand)"  *ngFor="let brand of brands | brandFilter:brandFilterText; index as i" [ngValue]="brand"> {{brand.brandName}} </option>
 </select>
 
 </div>

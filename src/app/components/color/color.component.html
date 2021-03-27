@@ -1,15 +1,5 @@
 <h6>Colors</h6>
 
-<!-- <ul class="list-group">
-    <li (click)="clearCurrentColor()" [class]="getAllColorClass()" routerLink="/cars" >Tüm Renkler</li>        Listeli sistem.
-    <li (click)="setCurrentColor(color)" 
-    routerLink="cars/color/{{color.colorId}}" 
-    *ngFor="let color of colors" 
-    [class]="getCurrentColor(color)"> {{color.colorName}} </li>
-    
-</ul>
-<h6 *ngIf="currentColor" >{{currentColor.colorName}} seçildi.</h6>  -->
-
 <div class="mb-3">
     <input type="text" [(ngModel)]="colorFilterText" class="form-control" id="colorFilterText" 
     placeholder="Renk giriniz">

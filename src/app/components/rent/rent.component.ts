@@ -14,16 +14,15 @@ import { CustomerService } from 'src/app/services/customer.service';
 })
 export class RentComponent implements OnInit {
 
-  
-  constructor(private activatedRoute:ActivatedRoute, private customerService:CustomerService,  private router:Router, private toastrService:ToastrService) { }
-  
   customers:Customer[]
 
   customerId:Number;
   rentDate:Date;
   returnDate:Date;
   @Input() car:Car;
-  
+
+  constructor(private activatedRoute:ActivatedRoute, private customerService:CustomerService,  private router:Router, private toastrService:ToastrService) { }
+
   ngOnInit(): void {
     this.getCustomer()
    

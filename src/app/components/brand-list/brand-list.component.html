@@ -1,0 +1,17 @@
+<div class="col-md-6">
+    <table  class="table table-sm table-bordered" style="margin-top: 15px;">
+        <thead>
+            <tr>
+                <th>Brand Id</th>
+                <th>Brand Name</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr  *ngFor="let brand of brands">
+              <td>{{brand.brandId}}</td>
+              <td>{{brand.brandName}}</td> 
+              <td><button class="btn btn-fill btn-sm btn-primary"  routerLink="brand-add/{{brand.brandId}}">Update</button></td> 
+          </tr>  
+        </tbody>   
+    </table>
+    </div>

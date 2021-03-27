@@ -60,7 +60,9 @@ export class ColorComponent implements OnInit {
 
   clearCurrentColor(){
     this.currentColor= undefined;
-    this.router.navigate(['/cars'], {queryParams: {colorId: undefined}, queryParamsHandling: 'merge', relativeTo: this.route})
+    this.router.navigate(['cars'])
     this.toastrService.info("Bütün araçlar listelendi", "Tüm renkler")
   }
+
+  
 }
