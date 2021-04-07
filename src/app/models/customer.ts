@@ -3,4 +3,5 @@ export interface Customer{
     companyName:String
     firstName:String
     lastName:String
+    findeks:Number
 }

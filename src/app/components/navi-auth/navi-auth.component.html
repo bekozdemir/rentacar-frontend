@@ -1,0 +1,32 @@
+<form *ngIf="!authService.isAuthenticated()" class="d-flex"> 
+    <div >
+      <button class="btn btn-outline-success" routerLink="login" >Login</button>
+    </div>
+    <div style="margin-left: 15px;">
+      <button class="btn btn-outline-success" routerLink="register">Register</button>
+    </div>
+</form>
+
+<div *ngIf="authService.isAuthenticated()" class="dropdown">
+    <button class="btn btn-light dropdown-toggle"  id="dropdown" data-bs-toggle="dropdown" aria-expanded="false"> {{authService.name}} {{authService.surname}} </button>
+    <ul class="dropdown-menu" aria-labelledby="dropdown">
+        <li><a class="dropdown-item" routerLink="/profile">Profil</a></li>
+        <li *ngIf="authService.roles"><a class="dropdown-item"> {{authService.roles}} </a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><button class="btn btn-logout dropdown-item" (click)="logOut()">Log Out</button></li>
+    </ul>
+
+</div>
+
+<!-- <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Additions
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <li><a class="dropdown-item" routerLink="/cars/car-add">Car Addition</a></li>
+      <li><a class="dropdown-item" routerLink="/colors/color-add" >Color Addition</a></li>
+      <li><a class="dropdown-item" routerLink="/brands/brand-add">Brand Addition</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item disabled"  >You can add items from options that listed above</a></li>
+    </ul>
+  </li> -->

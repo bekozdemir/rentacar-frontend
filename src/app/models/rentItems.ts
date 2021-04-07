@@ -4,4 +4,5 @@ export interface RentItems{
     customerId:Number;
     rentDate:Date;
     returnDate?:Date;
+    rentStatus:boolean;
 }

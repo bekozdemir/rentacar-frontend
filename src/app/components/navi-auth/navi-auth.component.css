@@ -1,0 +1,6 @@
+
+.btn-logout:hover{
+    color: #fff;
+    background-color: #6e0006;
+    border-color: #ffffff; /*set the color you want here*/
+}

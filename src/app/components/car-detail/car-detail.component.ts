@@ -37,7 +37,8 @@ export class CarDetailComponent implements OnInit {
 
       this.carDetails=response.data[0];
       this.dataLoaded=true
-      console.log(response)
+      //console.log(response)
+      
     })
   }
 

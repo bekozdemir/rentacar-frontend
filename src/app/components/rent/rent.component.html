@@ -44,20 +44,18 @@
               />
             </div>
           </div>
+
           <div class="form-group row mb-2">
-            <label for="example-date-input" class="col-4 col-form-label"
-              >Müşteri</label
-            >
+            <label for="example-date-input" class="col-4 col-form-label">Müşteri</label>
             <div class="col-8">
-              <select class="form-select" [(ngModel)]="customerId">
-                <option [value]="customer.customerId"
-                  *ngFor="let customer of customers"
-                >
-                  {{ customer.firstName }} {{ customer.lastName }} | {{ customer.companyName }}
+              <select class="form-select" >
+                <option selected [value]="customer.customerId" *ngFor="let customer of customers"> 
+                  {{ customer.firstName }} {{ customer.lastName }} | {{ customer.companyName }} | {{customer.findeks}} 
                 </option>
               </select>
             </div>
           </div>
+
           <div class="form-group row mb-2">
             <label for="example-date-input" class="col-4 col-form-label"
               >Başlangıç</label
@@ -81,6 +79,9 @@
                 [(ngModel)]="returnDate"
               />
             </div>
+          </div>
+          <div *ngIf="!findexStatus" class="alert alert-danger" style="margin-top: 10px;">
+            Findex Score is Not Enough
           </div>
         </div>
         <div class="modal-footer">

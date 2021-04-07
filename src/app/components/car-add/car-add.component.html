@@ -12,15 +12,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="brandId">Marka</label>
-                        <div class="form-group">
-                            <input type="number" id="brandName" formControlName="brandId" class="form-control" placeholder="Marka Idsi" />
-                        </div>
+                        <select id="brandId" formControlName="brandId" class="form-select" aria-label="Marka"> 
+                            <option value="" disabled selected hidden>Marka seçin</option>
+                            <option *ngFor="let brand of brands" [ngValue]="brand.brandId">{{brand.brandName}}</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="colorId">Renk</label>
-                        <div class="form-group">
-                            <input type="number" id="colorName" formControlName="colorId" class="form-control" placeholder="Renk Idsi" />
-                        </div>
+                        <select id="colorId" formControlName="colorId" class="form-select" aria-label="Renk">
+                            <option value="" disabled selected hidden>Renk seçin</option>
+                            <option *ngFor="let color of colors" [ngValue]="color.colorId" >{{color.colorName}}</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="modelYear">Model yılı</label>
@@ -49,15 +51,16 @@
             </div>
             
         </div>
-        <div class="card">
+        <div class="card" style="margin-top: 15px;">
             <div class="card-header"><h5 class="title">Araba Güncelle</h5></div>
             <div class="card-body">
                 <form [formGroup]="carUpdateForm" >
                     <div class="mb-3">
-                        <label for="carName">Araba Idsi</label>
-                        <div class="form-group">
-                            <input type="number" id="carId" formControlName="id" class="form-control" placeholder="Araba Idsi" />
-                        </div>
+                        <label for="carId">Araba Idsi</label>
+                        <select id="carId" formControlName="id" class="form-select" aria-label="ID" >
+                            <option value="" disabled selected hidden>Güncellemek istediğiniz aracı seçin</option>
+                            <option *ngFor="let car of cars" [ngValue]="car.id" >{{car.carName}}(Id:{{car.id}}) </option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="carName">Araba ismi</label>
@@ -67,15 +70,17 @@
                     </div>
                     <div class="mb-3">
                         <label for="brandId">Marka</label>
-                        <div class="form-group">
-                            <input type="number" id="brandUpdateName" formControlName="brandId" class="form-control" placeholder="Marka IDsi" />
-                        </div>
+                        <select id="updatebrandId" formControlName="brandId" class="form-select" aria-label="Marka"> 
+                            <option value="" disabled selected hidden>Marka seçin</option>
+                            <option *ngFor="let brand of brands" [ngValue]="brand.brandId">{{brand.brandName}}</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="colorId">Renk</label>
-                        <div class="form-group">
-                            <input type="number" id="colorUpdateName" formControlName="colorId" class="form-control" placeholder="Renk IDsi" />
-                        </div>
+                        <select id="updatecolorId" formControlName="colorId" class="form-select" aria-label="Renk">
+                            <option value="" disabled selected hidden>Renk seçin</option>
+                            <option *ngFor="let color of colors" [ngValue]="color.colorId" >{{color.colorName}}</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="modelYear">Model yılı</label>

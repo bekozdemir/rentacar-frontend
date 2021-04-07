@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
 @Component({
@@ -11,6 +12,7 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandAddComponent implements OnInit {
 
+  brands:Brand[]
   brandAddForm:FormGroup
   brandUpdateForm:FormGroup
   constructor(private brandService:BrandService, private formBuilder:FormBuilder, private toastrService:ToastrService, private router:Router) { }
@@ -18,6 +20,13 @@ export class BrandAddComponent implements OnInit {
   ngOnInit(): void {
     this.createBrandAddForm()
     this.createBrandUpdateForm()
+    this.getBrands()
+  }
+
+  getBrands(){
+    this.brandService.getBrands().subscribe(response=>{
+      this.brands=response.data
+    })
   }
 
   createBrandAddForm(){

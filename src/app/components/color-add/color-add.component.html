@@ -19,7 +19,7 @@
                 <button class="btn btn-fill btn-primary" (click)="add()">Add</button>
             </div>
         </div>
-        <div class="card">
+        <div class="card" style="margin-top: 15px;">
             <div class="card-header">
                 <h5>Update color</h5>
             </div>
@@ -27,10 +27,10 @@
                 <form [formGroup]="colorUpdateForm">
                     <div class="mb-3">
                         <label for="colorId">Color Id</label>
-                        <div class="form-group">
-                            <input type="number" id="updateColorId" formControlName="colorId" class="form-control"
-                                placeholder="Color Id" />
-                        </div>
+                        <select id="colorId" formControlName="colorId" class="form-select" aria-label="Renk">
+                            <option value="" disabled selected hidden>Güncellemek istediğiniz rengi seçin</option>
+                            <option *ngFor="let color of colors" [ngValue]="color.colorId" >{{color.colorName}}</option>
+                        </select>
                     </div>
                     <div class="mb-3">
                         <label for="colorName">Color Name</label>
