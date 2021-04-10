@@ -49,4 +49,5 @@ This project started to develop paralel with [Engin DEMİROG](https://github.com
 ## Contact
 Created by [@bekozdemir](https://github.com/bekozdemir/) - feel free to contact with me!
 
-[linkedin-url]: https://www.linkedin.com/in/berkay-%C3%B6zdemir/
+[linkedin-shield]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: https://www.linkedin.com/in/berkay-özdemir/
