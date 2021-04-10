@@ -49,6 +49,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ![Rentacar-frontend](./ReadMeImages/userdropdown.PNG)
 ![Rentacar-frontend](./ReadMeImages/profile.PNG)
 ![Rentacar-frontend](./ReadMeImages/colorlist.PNG)
+![Rentacar-frontend](./ReadMeImages/carrent.PNG)
+![Rentacar-frontend](./ReadMeImages/cardetail.PNG)
+![Rentacar-frontend](./ReadMeImages/cardetail2.PNG)
+![Rentacar-frontend](./ReadMeImages/payment.PNG)
 ![Rentacar-frontend](./ReadMeImages/brandlist.PNG)
 
 
