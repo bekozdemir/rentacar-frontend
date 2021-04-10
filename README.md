@@ -37,6 +37,21 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Screenshots
 ![Rentacar-frontend](./ReadMeImages/login.PNG)
+![Rentacar-frontend](./ReadMeImages/register.PNG)
+![Rentacar-frontend](./ReadMeImages/cars.PNG)
+![Rentacar-frontend](./ReadMeImages/colorfiltered.PNG)
+![Rentacar-frontend](./ReadMeImages/brandfilter.PNG)
+![Rentacar-frontend](./ReadMeImages/colorbrandfilter.PNG)
+![Rentacar-frontend](./ReadMeImages/carfilter2.PNG)
+![Rentacar-frontend](./ReadMeImages/caraddupdate.PNG)
+![Rentacar-frontend](./ReadMeImages/coloraddupdate.PNG)
+![Rentacar-frontend](./ReadMeImages/brandaddupdate.PNG)
+![Rentacar-frontend](./ReadMeImages/userdropdown.PNG)
+![Rentacar-frontend](./ReadMeImages/profile.PNG)
+![Rentacar-frontend](./ReadMeImages/colorlist.PNG)
+![Rentacar-frontend](./ReadMeImages/brandlist.PNG)
+
+
 
 
 ## Status
