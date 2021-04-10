@@ -1,3 +1,5 @@
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
 # Rentacar
 >
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.4. This is an example of rent a car system for todays online websites. Aim of this project is improving my skills and learn new design patterns.
@@ -5,7 +7,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Techniques](#techniques)
 * [Features](#features)
 * [Development Server](#development-server)
 * [Further Help](#further-help)
@@ -15,18 +16,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * [Contact](#contact)
 
 ## Technologies
-* [.NET](https://github.com/bekozdemir/ReCapProject)
-* ASP.NET for Restfull API
-* EntityFramework
-* Autofac
-* FluentValidation
-* MsSql
 * Angular
-
-## Techniques
-* AOP
-* Layered Architecture
-* JWT
+* [.NET](https://github.com/bekozdemir/ReCapProject)
 
 ## Features
 List of features ready 
@@ -57,3 +48,5 @@ This project started to develop paralel with [Engin DEMİROG](https://github.com
 
 ## Contact
 Created by [@bekozdemir](https://github.com/bekozdemir/) - feel free to contact with me!
+
+[linkedin-url]: https://www.linkedin.com/in/berkay-%C3%B6zdemir/
